@@ -320,6 +320,10 @@ h2 {
     font-weight: bold;
     font-size: 1.2em;
     margin: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card .details-btn {

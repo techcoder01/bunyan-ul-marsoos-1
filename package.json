@@ -4,7 +4,8 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "dev": "live-server"
+    "dev": "live-server",
+    "build": "echo 'Static site - no build needed'"
   },
   "keywords": [],
   "author": "",
