@@ -14,28 +14,68 @@ function type() {
 document.addEventListener('DOMContentLoaded', type);
 
 
-// Add soldier data
-const soldiers = [
-    { name: 'Squadron Leader Usman Yousuf', image: 'public/1.jpg' },
-    { name: 'Chief Technician Aurangzeb', image: 'public/2.jpg' },
-    { name: 'Corporal Technician Farooq', image: 'public/3.jpg' },
-    { name: 'Senior Technician Mubashir', image: 'public/4.jpg' },
-    { name: 'Captain Abdullah', image: 'public/download (1).jpg' },
-    { name: 'Major Raza', image: 'public/download (2).jpg' },
-    { name: 'Subedar Ahmed', image: 'public/download (3).jpg' },
-    { name: 'Sepoy Ali', image: 'public/images (4).jpg' }
+// Pakistan Army Martyrs
+const armyMartyrs = [
+    { name: 'Havildar Muhammad Naveed', image: 'public/naveed.jpg' },
+    { name: 'Naik Abdul Rehman', image: 'public/abdulrehman.jpg' },
+    { name: 'Naik Waqar Khalid', image: 'public/waqar.jpg' },
+    { name: 'Lance Naik Dilawar Khan', image: 'public/dilavwar.jpg' },
+    { name: 'Lance Naik Ikramullah', image: 'public/ikramullah.jpg' },
+    { name: 'Sepoy Muhammad Adeel Akbar', image: 'public/adeel.jpg' },
+    { name: 'Sepoy Nisar', image: 'public/nisar.jpg' }
 ];
 
+// Pakistan Air Force Martyrs
+const airforceMartyrs = [
+    { name: 'Squadron Leader Usman Yousuf', image: 'public/usman.jpg' },
+    { name: 'Chief Technician Aurangzeb', image: 'public/aurangzeb.jpg' },
+    { name: 'Senior Technician Najeeb', image: 'public/najeeb.jpg' },
+    { name: 'Corporal Technician Farooq', image: 'public/farooq.jpg' },
+    { name: 'Senior Technician Mubashir', image: 'public/mubasher.jpg' }
+];
+
+// Populate Army Martyrs Gallery
+const armyGallery = document.querySelector('.army-gallery');
+if (armyGallery) {
+    armyMartyrs.forEach(martyr => {
+        const div = document.createElement('div');
+        div.classList.add('card');
+        div.innerHTML = `
+            <img src="${martyr.image}" alt="${martyr.name}">
+            <p>${martyr.name}</p>
+        `;
+        armyGallery.appendChild(div);
+    });
+}
+
+// Populate Air Force Martyrs Gallery
+const airforceGallery = document.querySelector('.airforce-gallery');
+if (airforceGallery) {
+    airforceMartyrs.forEach(martyr => {
+        const div = document.createElement('div');
+        div.classList.add('card');
+        div.innerHTML = `
+            <img src="${martyr.image}" alt="${martyr.name}">
+            <p>${martyr.name}</p>
+        `;
+        airforceGallery.appendChild(div);
+    });
+}
+
+// Fallback for existing .soldier-gallery class
 const soldierGallery = document.querySelector('.soldier-gallery');
-soldiers.forEach(soldier => {
-    const div = document.createElement('div');
-    div.classList.add('card');
-    div.innerHTML = `
-        <img src="${soldier.image}" alt="${soldier.name}">
-        <p>${soldier.name}</p>
-    `;
-    soldierGallery.appendChild(div);
-});
+if (soldierGallery) {
+    const allMartyrs = [...armyMartyrs, ...airforceMartyrs];
+    allMartyrs.forEach(martyr => {
+        const div = document.createElement('div');
+        div.classList.add('card');
+        div.innerHTML = `
+            <img src="${martyr.image}" alt="${martyr.name}">
+            <p>${martyr.name}</p>
+        `;
+        soldierGallery.appendChild(div);
+    });
+}
 
 
 

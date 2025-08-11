@@ -226,6 +226,41 @@ h2 {
     color: #ffffff;
 }
 
+/* Martyrs section styling */
+.martyrs-section {
+    margin-bottom: 40px;
+}
+
+.martyrs-section h3 {
+    color: #00ff00;
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    border-bottom: 2px solid rgba(0, 255, 0, 0.3);
+    padding-bottom: 10px;
+}
+
+.army-section h3 {
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    border-bottom: 2px solid rgba(0, 255, 0, 0.3);
+}
+
+.airforce-section h3 {
+    color: #00ccff;
+    text-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+    border-bottom: 2px solid rgba(0, 204, 255, 0.3);
+}
+
+/* Section divider */
+.section-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ff00, transparent);
+    margin: 50px 0;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
 .card-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -240,6 +275,9 @@ h2 {
     overflow: hidden;
     border: 1px solid rgba(0, 255, 0, 0.2);
     animation: slideIn 1s ease-out forwards;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes slideIn {
@@ -265,10 +303,11 @@ h2 {
 
 .card img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 200px;
+    object-fit: contain;
     border-bottom: 2px solid rgba(0, 255, 0, 0.3);
     transition: transform 0.3s ease-in-out, filter 0.3s;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .card:hover img {
@@ -765,7 +804,7 @@ footer {
     animation: gradientShift 3s ease-in-out infinite;
     text-align: center;
     text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
-    margin-bottom: 15px !important;
+    margin-bottom: 5px !important;
 }
 
 .university-highlight {
@@ -796,6 +835,16 @@ footer {
     }
 }
 
+/* Location styling for both university and company */
+.location {
+    font-size: 0.9em;
+    color: #cccccc;
+    font-style: italic;
+    text-align: center;
+    margin: 5px 0 15px 0;
+    opacity: 0.8;
+}
+
 /* Special styling for Company name */
 .company-name {
     font-size: 1.4em !important;
@@ -808,7 +857,7 @@ footer {
     animation: gradientShift 3s ease-in-out infinite;
     text-align: center;
     text-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
-    margin-bottom: 15px !important;
+    margin-bottom: 5px !important;
 }
 
 .company-highlight {
